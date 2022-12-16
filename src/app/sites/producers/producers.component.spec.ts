@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProducersViewComponent } from './producers-view.component';
+import { ProducersComponent } from './producers.component';
 
-describe('ProducersViewComponent', () => {
-  let component: ProducersViewComponent;
-  let fixture: ComponentFixture<ProducersViewComponent>;
+describe('ProducersComponent', () => {
+  let component: ProducersComponent;
+  let fixture: ComponentFixture<ProducersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProducersViewComponent ]
+      declarations: [ ProducersComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProducersViewComponent);
+    fixture = TestBed.createComponent(ProducersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,22 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Nowy budynek</h1>
+    <form (ngSubmit)="onSubmit()" #b="ngForm">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Nazwa</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="name" required>
+        <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Opis</mat-label>
+        <input matInput placeholder="" [formControl]="desc" required>
+        <mat-error *ngIf="desc.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <button type="submit" class="btn btn-success" [disabled]="!b.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="newHero(); b.reset()">New Hero</button>
+    </form>
+  </div>
+</div>

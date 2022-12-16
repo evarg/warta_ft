@@ -1,0 +1,20 @@
+<h1>{{componentTitle}} (ID: {{ buildingID }}) new</h1>
+
+<form [formGroup]="buildingForm" (ngSubmit)="onSubmit()" #b="ngForm">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Nazwa</mat-label>
+    <input matInput placeholder="pat@example.com" formControlName="name">
+    <mat-error *ngIf="buildingForm.controls['name'].invalid">Error</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Opis</mat-label>
+    <input matInput placeholder="" formControlName="desc">
+    <mat-error *ngIf="buildingForm.controls['desc'].invalid">Error</mat-error>
+  </mat-form-field>
+
+  <button type="button" class="btn btn-default" (click)="onSave()" [disabled]="buildingForm.invalid">Zapisz</button>
+  <button type="button" class="btn btn-default" (click)="buildingForm.reset()">Reset</button>
+  <button type="button" class="btn btn-default" (click)="onReload()">Reload</button>
+</form>
